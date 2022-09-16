@@ -15,7 +15,7 @@ export default {
     //.
     onMounted(function () {
       const persistance = localStorage.getItem("persistance");
-      if (persistance) return;
+      if (persistance) router.push("enter");
       router.push("enter");
     });
 
