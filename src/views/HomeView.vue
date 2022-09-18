@@ -1,35 +1,46 @@
 <template>
-  <div class="home">
-    <header>
-      <div class="logo">
-        <h1>HIS.TOIRE</h1>
-      </div>
-      <div class="contact">
-        <h1>contact</h1>
-      </div>
-      <div class="border"></div>
-    </header>
-    <main>
-      <div class="intro">
-        <div class="text">
-          <p>
-            <span
-              >Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Laudantium</span
-            >
-            <span>
-              tempora libero pariatur molestiae qui, fugiat eaque, maxime</span
-            >
-            <span
-              >voluptatem ab deserunt nesciunt quasi quas quos ipsam sint,</span
-            >
-            <span>molestias consequuntur in error.</span>
-          </p>
-
-          <div class="border"></div>
+  <div class="container">
+    <div class="home">
+      <div class="black-T"></div>
+      <header>
+        <div class="logo">
+          <h1>HIS.TOIRE</h1>
         </div>
-      </div>
-    </main>
+        <div class="contact">
+          <h1>contact</h1>
+        </div>
+        <div class="border"></div>
+      </header>
+      <main>
+        <div class="intro">
+          <div class="text">
+            <p>
+              <span
+                >Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Laudantium</span
+              >
+              <span>
+                tempora libero pariatur molestiae qui, fugiat eaque,
+                maxime</span
+              >
+              <span
+                >voluptatem ab deserunt nesciunt quasi quas quos ipsam
+                sint,</span
+              >
+              <span>molestias consequuntur in error.</span>
+            </p>
+
+            <div class="border"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <div class="sec-page">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit deleniti
+      aperiam similique placeat iure dolorum, provident, esse molestias rerum
+      necessitatibus asperiores quia. Beatae cumque eligendi quia facere
+      molestias autem quas?
+    </div>
   </div>
 </template>
 
@@ -40,6 +51,12 @@ export default {
   name: "HomeView",
   setup() {
     $(document).ready(function () {
+      gsap.to(".black-T", {
+        duration: 3,
+        left: "100%",
+        ease: Expo.easeInOut,
+      });
+
       gsap.from(".logo", {
         duration: 2,
         opacity: 0,
@@ -85,6 +102,17 @@ export default {
   height: 100vh;
   padding: 1em 2em;
 
+  .black-T {
+    position: fixed;
+    height: 100vh;
+    width: 150%;
+    top: 0;
+    left: -50%;
+    background-color: #998c6a;
+    z-index: 10;
+    overflow: hidden;
+  }
+
   header {
     display: flex;
     justify-content: space-between;
@@ -118,5 +146,14 @@ export default {
     width: 100%;
     background-color: #fff;
   }
+}
+
+.sec-page {
+  height: 100vh;
+  width: 100%;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>
